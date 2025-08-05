@@ -11,7 +11,7 @@ public class TodoItem
 
       private readonly List<IDomainEvent> _changes = new();
 
-      public IEnumerable<IDomainEvent> UncommittedChanges() => _changes;
+      public IEnumerable<IDomainEvent> GetUncommittedChanges() => _changes;
 
       public void MarkChangesAsCompleted() => _changes.Clear();
 
