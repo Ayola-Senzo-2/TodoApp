@@ -1,13 +1,8 @@
 
 using TodoApp.Domain.Events;
+using TodoApp.Domain.Interfaces;
 
 namespace TodoApp.Infrastructure.EventStore;
-
-public interface IEventStore
-{
-      public void SaveChanges(Guid aggregateId, IEnumerable<IDomainEvent> events);
-      List<IDomainEvent> GetEventsForAggregate(Guid aggregateId);
-}
 
 public class InMemoryEventStore : IEventStore
 {
